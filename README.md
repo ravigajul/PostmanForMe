@@ -23,7 +23,7 @@
 		Generate an API key
 		From <https://github.com/postmanlabs/newman#using-newman-with-the-postman-api> 
 		
-	newman run https://api.getpostman.com/collections/6503bbaf-0bf2-ecd4-9a26-02e95f4ab915?apikey=PMAK-609a586545cb530040789de5-83ba771fd6dcd30645239bd9c46f4344d7
+	newman run https://api.getpostman.com/collections/6503bbaf-0bf2-ecd4-9a26-02e95f4ab915?apikey=<replace>
 	Note: This process is auto synced to postman profile hence no need of exporting after any changes etc 
 # 5. Using Newman with postman
 	1 Generate an API key
@@ -36,14 +36,14 @@
 	
 	Note: It is uid that is to be replace in above command and not id
 	
-	newman run  "https://api.getpostman.com/collections/15403473-296ab3b8-9d13-407b-a3b4-9c10815e4c79?apikey=PMAK-609a586545cb530040789de5-d8cdefdd16fbcac8e11c86c324a1876b61" \
-	    --environment "https://api.getpostman.com/environments/15403473-d65a1a64-3fbc-4be6-bfb5-b9db561596ec?apikey=PMAK-609a586545cb530040789de5-d8cdefdd16fbcac8e11c86c324a1876b61"
+	newman run  "https://api.getpostman.com/collections/15403473-296ab3b8-9d13-407b-a3b4-9c10815e4c79?apikey=<replace>" \
+	    --environment "https://api.getpostman.com/environments/15403473-d65a1a64-3fbc-4be6-bfb5-b9db561596ec?apikey=<replace>"
 # 6. Run the report to generate HTML Extra Report
-	newman run  "https://api.getpostman.com/collections/15403473-6503bbaf-0bf2-ecd4-9a26-02e95f4ab915?apikey=PMAK-609a586545cb530040789de5-d8cdefdd16fbcac8e11c86c324a1876b61" \
-	    --environment "https://api.getpostman.com/environments/15403473-d65a1a64-3fbc-4be6-bfb5-b9db561596ec?apikey=PMAK-609a586545cb530040789de5-d8cdefdd16fbcac8e11c86c324a1876b61"  -r htmlextra
+	newman run  "https://api.getpostman.com/collections/15403473-6503bbaf-0bf2-ecd4-9a26-02e95f4ab915?apikey=<replace>" \
+	    --environment "https://api.getpostman.com/environments/15403473-d65a1a64-3fbc-4be6-bfb5-b9db561596ec?apikey=<replace>"  -r htmlextra
 
-	newman run  "https://api.getpostman.com/collections/15403473-6503bbaf-0bf2-ecd4-9a26-02e95f4ab915?apikey=PMAK-609a586545cb530040789de5-d8cdefdd16fbcac8e11c86c324a1876b61" \
-	    --environment "https://api.getpostman.com/environments/15403473-d65a1a64-3fbc-4be6-bfb5-b9db561596ec?apikey=PMAK-609a586545cb530040789de5-d8cdefdd16fbcac8e11c86c324a1876b61"  --reporters cli, htmlextra
+	newman run  "https://api.getpostman.com/collections/15403473-6503bbaf-0bf2-ecd4-9a26-02e95f4ab915?apikey=<replace>" \
+	    --environment "https://api.getpostman.com/environments/15403473-d65a1a64-3fbc-4be6-bfb5-b9db561596ec?apikey=<replace>"  --reporters cli, htmlextra
 # 7. Setting runtime environment variables
 	var jsonData = pm.response.json();
 	postman.setEnvironmentVariable("authtoken","Token "+jsonData.user.token)
@@ -124,6 +124,10 @@
 			ii. In headers automatically Authorization : <base64 encoded string equivalent of Basic  username:password is generated>
 				Ex: Basic postman:password get converted to Basic cG9zdG1hbjpwYXNzd29yZA== 
 	Note: Encoding/Decoding can be checked at https://codebeautify.org/base64-decode
+## Random Variables in postman
+In the request body type {{$ you will see a list of pre-defined random variables that can be used.
+## PUT Vs PATCH
+PUT will replace the entire item, Patch will update certain properties of an item.
 # Important Resources
 https://postman-quick-reference-guide.readthedocs.io/en/latest/cheatsheet.html
 https://designer.mocky.io/design
