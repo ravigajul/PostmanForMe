@@ -128,6 +128,9 @@
 In the request body type {{$ you will see a list of pre-defined random variables that can be used.
 ## PUT Vs PATCH
 PUT will replace the entire item, Patch will update certain properties of an item.
+## HEAD
+The HEAD method in HTTP is similar to the GET method, but it only requests the headers of the response, not the actual resource representation. When you make a HEAD request to a server, it will respond with the headers that would be returned if you made a GET request to the same resource. However, it won't include the body of the resource itself.
+
 # Important Resources
 https://postman-quick-reference-guide.readthedocs.io/en/latest/cheatsheet.html
 https://designer.mocky.io/design
