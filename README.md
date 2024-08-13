@@ -78,9 +78,18 @@
 		b. Postman.setNextRequest(null) //this will stop the execution further after current request.
 		c. If postman.setNextRequest(null) is not present in the redirected requests, it will continue its natural flow and might endup in endless loop
 		d. To overcome the above loop we can use if condition with a global variable to track howmany times it ran.
-# 18. Pm.info.requestName //this will return the request name as String
-# 19. Pm.info.requestid //this will return the id of the request as a string.
-# 20. Pm.iterationData.get("<<name of the variable>>") // this can be used for assertions in tests with external data
+# 18. Request Name as String
+```bash
+Pm.info.requestName //this will return the request name as String
+```
+# 19. Id of Request as string
+```bash
+Pm.info.requestid //this will return the id of the request as a string.
+```
+# 20. External Data Retrieval
+```bash
+Pm.iterationData.get("<<name of the variable>>") // this can be used for assertions in tests with external data
+ ```
 # 21. Parsing Response
 		a. pm.respone.json()  //get the json response body
 		b. xml2Json(responseBody) // get xml response body as json
