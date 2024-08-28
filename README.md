@@ -182,7 +182,30 @@ pm.environment.set('generatedTimestamp', timestamp);
 
 console.log('Generated Timestamp:', timestamp);
 ```
+Or use this for the correct timezone
 
+```javascript
+function generateTimestamp() {
+    const date = new Date();
+    const year = date.getFullYear();
+    const month = String(date.getMonth() + 1).padStart(2, '0');
+    const day = String(date.getDate()).padStart(2, '0');
+    const hours = String(date.getHours()).padStart(2, '0');
+    const minutes = String(date.getMinutes()).padStart(2, '0');
+    const seconds = String(date.getSeconds()).padStart(2, '0');
+    const timezoneOffset = '-05:00';
+
+    return `${year}-${month}-${day}T${hours}:${minutes}:${seconds}${timezoneOffset}`;
+}
+
+// Generate the timestamp
+const timestamp = generateTimestamp();
+
+// Set the timestamp as an environment variable
+pm.environment.set('generatedTimestamp', timestamp);
+
+console.log('Generated Timestamp:', timestamp);
+```
 
 # Gradle
     compile "com.smartcar.sdk:java-sdk:2.1.5" Maven: <dependency> <groupId>com.smartcar.sdk</groupId> <artifactId>java-sdk</artifactId> <version>2.1.5</version> </dependency>
