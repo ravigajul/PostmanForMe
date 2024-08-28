@@ -163,5 +163,26 @@ Working! The header is 'Connection', not 'Connect'.
 
 From <https://github.com/postmanlabs/newman/issues/249> 
 
+## Generate Timestamp
+```javascript
+// Function to generate a timestamp in the format: YYYY-MM-DDTHH:mm:ss-05:00
+function generateTimestamp() {
+    const date = new Date();
+    const offset = -5 * 60; // Offset in minutes for -05:00 timezone
+    const localISOTime = new Date(date.getTime() - (offset * 60000)).toISOString().slice(0, -1);
+    const timezoneOffset = '-05:00';
+    return `${localISOTime}${timezoneOffset}`;
+}
+
+// Generate the timestamp
+const timestamp = generateTimestamp();
+
+// Set the timestamp as an environment variable
+pm.environment.set('generatedTimestamp', timestamp);
+
+console.log('Generated Timestamp:', timestamp);
+```
+
+
 # Gradle
     compile "com.smartcar.sdk:java-sdk:2.1.5" Maven: <dependency> <groupId>com.smartcar.sdk</groupId> <artifactId>java-sdk</artifactId> <version>2.1.5</version> </dependency>
