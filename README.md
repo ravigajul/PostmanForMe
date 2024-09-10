@@ -206,6 +206,23 @@ pm.environment.set('generatedTimestamp', timestamp);
 
 console.log('Generated Timestamp:', timestamp);
 ```
+##  Postman script to check if a resonse body contains a specific key value
+```javascript
+pm.test("Check if decline reasons contains reasonCode = 6005", function () {
+    // Parse the response body as JSON
+    var jsonData = pm.response.json();
 
+    // Assume the array is in a property called 'data'
+    var array = jsonData.decisionResponse.allDeclineReasons;
+
+    // Check if any object in the array has reasonCode = 6005
+    var containsReasonCode = array.some(function (item) {
+        return item.reasonCode === "6005";
+    });
+
+    // Assert that the array contains the reasonCode
+    pm.expect(containsReasonCode).to.be.true;
+});
+```
 # Gradle
     compile "com.smartcar.sdk:java-sdk:2.1.5" Maven: <dependency> <groupId>com.smartcar.sdk</groupId> <artifactId>java-sdk</artifactId> <version>2.1.5</version> </dependency>
