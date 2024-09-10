@@ -213,11 +213,11 @@ pm.test("Check if decline reasons contains reasonCode = 6005", function () {
     var jsonData = pm.response.json();
 
     // Assume the array is in a property called 'data'
-    var array = jsonData.decisionResponse.allDeclineReasons;
+    var array = jsonData.somekey.otherkey;
 
     // Check if any object in the array has reasonCode = 6005
     var containsReasonCode = array.some(function (item) {
-        return item.reasonCode === "6005";
+        return item.keytobechecked === "value";
     });
 
     // Assert that the array contains the reasonCode
