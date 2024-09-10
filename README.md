@@ -140,28 +140,6 @@ PUT will replace the entire item, Patch will update certain properties of an ite
 ## HEAD
 The HEAD method in HTTP is similar to the GET method, but it only requests the headers of the response, not the actual resource representation. When you make a HEAD request to a server, it will respond with the headers that would be returned if you made a GET request to the same resource. However, it won't include the body of the resource itself.
 
-# Important Resources
-https://postman-quick-reference-guide.readthedocs.io/en/latest/cheatsheet.html
-https://designer.mocky.io/design
-https://www.chaijs.com/api/bdd/
-https://requestbin.com/
-https://learning.postman.com/docs/running-collections/using-newman-cli/command-line-integration-with-newman/#:~:text=The%20easiest%20way%20to%20run,to%20share%20as%20a%20file.&text=You%20can%20also%20pass%20a%20collection%20as%20a%20URL%20by%20sharing%20it.
-https://github.com/postmanlabs/newman
-https://swapi.dev/
-https://learning.postman.com/docs/developer/echo-api/
-https://codebeautify.org/base64-decode
-https://datatracker.ietf.org/doc/html/rfc6749#section-1.3.1
-https://github.com/public-apis/public-apis
-
-Newman connect ETIMEDOUT 198.105.244.23:80
-Content-Type : aplication/xml; charset=utf-8
-Postman sends 'Content-Length' and Newman sends 'content-length'. 
- Thanks for your reply. I have resolved it with "-k" in the command.(
-1. Set the 'Connection' header for the (GET) request that is failing in Newman to the value 'keep-alive' in the Postman collection.
-2. Re-export your collection for running in Newman
-Working! The header is 'Connection', not 'Connect'.
-
-From <https://github.com/postmanlabs/newman/issues/249> 
 
 ## Generate Timestamp
 ```javascript
@@ -226,3 +204,25 @@ pm.test("Check if decline reasons contains reasonCode = 6005", function () {
 ```
 # Gradle
     compile "com.smartcar.sdk:java-sdk:2.1.5" Maven: <dependency> <groupId>com.smartcar.sdk</groupId> <artifactId>java-sdk</artifactId> <version>2.1.5</version> </dependency>
+# Important Resources
+https://postman-quick-reference-guide.readthedocs.io/en/latest/cheatsheet.html
+https://designer.mocky.io/design
+https://www.chaijs.com/api/bdd/
+https://requestbin.com/
+https://learning.postman.com/docs/running-collections/using-newman-cli/command-line-integration-with-newman/#:~:text=The%20easiest%20way%20to%20run,to%20share%20as%20a%20file.&text=You%20can%20also%20pass%20a%20collection%20as%20a%20URL%20by%20sharing%20it.
+https://github.com/postmanlabs/newman
+https://swapi.dev/
+https://learning.postman.com/docs/developer/echo-api/
+https://codebeautify.org/base64-decode
+https://datatracker.ietf.org/doc/html/rfc6749#section-1.3.1
+https://github.com/public-apis/public-apis
+
+Newman connect ETIMEDOUT 198.105.244.23:80
+Content-Type : aplication/xml; charset=utf-8
+Postman sends 'Content-Length' and Newman sends 'content-length'. 
+ Thanks for your reply. I have resolved it with "-k" in the command.(
+1. Set the 'Connection' header for the (GET) request that is failing in Newman to the value 'keep-alive' in the Postman collection.
+2. Re-export your collection for running in Newman
+Working! The header is 'Connection', not 'Connect'.
+
+From <https://github.com/postmanlabs/newman/issues/249> 
