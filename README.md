@@ -1,5 +1,6 @@
 # PostmanForMe
 # NewMan
+https://github.com/postmanlabs/newman
     It’s a CLI for running postman collections in a terminal which helps further for CICD.
     Dependencis : Node.js and NPM
 # Intall NewMan
