@@ -110,6 +110,37 @@ Additional tips:
 
 Remember to run these commands from the directory where your collection and environment files are located, or provide the full path to these files in the command.
 
+## Output the data to results.csv
+
+Summary of how to use Newman to write status codes and response JSON path values to a CSV file, as if you're doing this for the first time:
+
+## Summary: Using Newman to Write API Test Results to CSV
+
+1. Install required tools:
+   ```
+   npm install -g newman newman-reporter-csv
+   ```
+
+2. Create a Postman collection with your API requests.
+
+3. Add tests to your requests to extract desired values:
+   ```javascript
+   pm.test("Extract values", function() {
+     pm.globals.set("status_code", pm.response.code);
+     pm.globals.set("json_value", pm.response.json().path.to.value);
+   });
+   ```
+
+4. Export your Postman collection as a JSON file.
+
+5. Run Newman with the CSV reporter:
+   ```
+   newman run YourCollection.json -d testdata.csv -r csv --reporter-csv-export results.csv --global-var "status_code" --global-var "json_value"
+   ```
+
+6. Check the generated results.csv file for your test results, including status codes and extracted JSON values.
+
+This process allows you to automate API testing and easily export results to a CSV file for further analysis or reporting. The CSV will include standard information about each request, along with your custom extracted values as additional columns.
 
 # 8. Scope of variables 
 	
