@@ -114,8 +114,6 @@ Remember to run these commands from the directory where your collection and envi
 
 Summary of how to use Newman to write status codes and response JSON path values to a CSV file, as if you're doing this for the first time:
 
-## Summary: Using Newman to Write API Test Results to CSV
-
 1. Install required tools:
    ```
    npm install -g newman newman-reporter-csv
