@@ -274,7 +274,7 @@ Working! The header is 'Connection', not 'Connect'.
 
 From <https://github.com/postmanlabs/newman/issues/249> 
 
-Citations:
+Citations:  
 [1] https://learning.postman.com/docs/collections/using-newman-cli/installing-running-newman/  
 [2] https://toolsqa.com/postman/install-newman-using-npm/  
 [3] https://www.npmjs.com/package/newman  
