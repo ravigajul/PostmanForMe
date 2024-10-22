@@ -97,11 +97,22 @@ Remember to run these commands from the directory where your collection and envi
 
 # 8. Scope of variables 
 	
+## Postman Variable Getters
 
-# 9. Pm.variables.get("key") // This is a scoped getter.This will get the value from the narrowed scope that postman determines as good as {{accessToken}}.
-# 10. Pm.globals.get("Key") //This will fetch the value from global scope
-# 11. Pm.environments.get("key") //This will fetch the value from environment scope.
-# 12. To send a request from pre-request step generate the required code by clicking code beside cookies under send button in postman and select node.js-Request
+9. `pm.variables.get("key")`
+   - This is a scoped getter.
+   - This will get the value from the narrowed scope that Postman determines.
+   - As good as using `{{accessToken}}`.
+
+10. `pm.globals.get("key")`
+    - This will fetch the value from the global scope.
+
+11. `pm.environment.get("key")`
+    - This will fetch the value from the environment scope.
+
+12. To send a request from pre-request step:
+    - Generate the required code by clicking "Code" beside "Cookies" under the "Send" button in Postman.
+    - Select "Node.js - Request" from the options.
 # 13. Import a request from a curl command.
 		a. Go to angular.realworld.io
 		b. Create an article
