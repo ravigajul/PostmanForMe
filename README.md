@@ -78,12 +78,28 @@ https://github.com/postmanlabs/newman
    - Save the JSON file
 
 6. Run Newman with htmlextra reporter:
+```
+newman run path/to/your/collection.json -e path/to/your/environment.json -r htmlextra,cli --reporter-htmlextra-export path/to/output/report.html
+```
+
+1. `newman run`: This is the basic command to run Newman.
+
+2. `path/to/your/collection.json`: Replace this with the actual path to your Postman collection JSON file.
+
+3. `-e path/to/your/environment.json`: This specifies the environment file to use. Replace with your actual environment file path. If you're not using an environment file, you can omit this part.
+
+4. `-r htmlextra,cli`: This specifies the reporters to use. 
+   - `htmlextra` generates the detailed HTML report
+   - `cli` shows the output in the command line
+
+5. `--reporter-htmlextra-export path/to/output/report.html`: This specifies where to save the HTML report. Replace with your desired output path and filename.
+
    ```
    newman run path/to/your/collection.json -e path/to/your/environment.json -r htmlextra,cli --reporter-htmlextra-export path/to/output/report.html
    ```
    Replace the paths with your actual file locations.
 
-7. View the report:
+8. View the report:
    - Navigate to the output location you specified
    - Open the HTML file in a web browser
 
