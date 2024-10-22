@@ -275,11 +275,11 @@ Working! The header is 'Connection', not 'Connect'.
 From <https://github.com/postmanlabs/newman/issues/249> 
 
 Citations:
-[1] https://learning.postman.com/docs/collections/using-newman-cli/installing-running-newman/
-[2] https://toolsqa.com/postman/install-newman-using-npm/
-[3] https://www.npmjs.com/package/newman
-[4] https://apidog.com/blog/how-to-install-newman-and-run-postman-collection/
-[5] https://www.youtube.com/watch?v=51PL_D6RINw
-[6] https://www.softwaretestinghelp.com/postman-newman/
-[7] https://www.youtube.com/watch?v=wyIC-FquhUk
-[8] https://www.npmjs.com/package/newman-reporter-htmlextra
+[1] https://learning.postman.com/docs/collections/using-newman-cli/installing-running-newman/  
+[2] https://toolsqa.com/postman/install-newman-using-npm/  
+[3] https://www.npmjs.com/package/newman  
+[4] https://apidog.com/blog/how-to-install-newman-and-run-postman-collection/  
+[5] https://www.youtube.com/watch?v=51PL_D6RINw  
+[6] https://www.softwaretestinghelp.com/postman-newman/  
+[7] https://www.youtube.com/watch?v=wyIC-FquhUk  
+[8] https://www.npmjs.com/package/newman-reporter-htmlextra  
