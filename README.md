@@ -48,7 +48,53 @@ https://github.com/postmanlabs/newman
 # 7. Setting runtime environment variables
 	var jsonData = pm.response.json();
 	postman.setEnvironmentVariable("authtoken","Token "+jsonData.user.token)
-	
+
+ ## Newman to run collection locally and generate htmlextra report
+
+1. Install Node.js:
+   - Download and install Node.js from https://nodejs.org/
+   - Verify installation by running `node --version` in your command prompt
+
+2. Install Newman globally:
+   ```
+   npm install -g newman
+   ```
+
+3. Install newman-reporter-htmlextra globally:
+   ```
+   npm install -g newman-reporter-htmlextra
+   ```
+
+4. Export your Postman collection:
+   - Open Postman
+   - Select your collection
+   - Click "..." next to the collection name
+   - Choose "Export"
+   - Save the JSON file to your desired location
+
+5. (Optional) Export your environment file if you're using one:
+   - Go to your environments in Postman
+   - Click the download icon next to the environment name
+   - Save the JSON file
+
+6. Run Newman with htmlextra reporter:
+   ```
+   newman run path/to/your/collection.json -e path/to/your/environment.json -r htmlextra,cli --reporter-htmlextra-export path/to/output/report.html
+   ```
+   Replace the paths with your actual file locations.
+
+7. View the report:
+   - Navigate to the output location you specified
+   - Open the HTML file in a web browser
+
+Additional tips:
+- Use `--reporter-htmlextra-darkTheme` for a dark-themed report
+- Use `--reporter-htmlextra-title "Your Report Title"` to set a custom report title
+- Use `--reporter-htmlextra-logs` to include console logs in the report
+
+Remember to run these commands from the directory where your collection and environment files are located, or provide the full path to these files in the command.
+
+
 # 8. Scope of variables 
 	
 
@@ -227,3 +273,13 @@ Postman sends 'Content-Length' and Newman sends 'content-length'. 
 Working! The header is 'Connection', not 'Connect'.
 
 From <https://github.com/postmanlabs/newman/issues/249> 
+
+Citations:
+[1] https://learning.postman.com/docs/collections/using-newman-cli/installing-running-newman/
+[2] https://toolsqa.com/postman/install-newman-using-npm/
+[3] https://www.npmjs.com/package/newman
+[4] https://apidog.com/blog/how-to-install-newman-and-run-postman-collection/
+[5] https://www.youtube.com/watch?v=51PL_D6RINw
+[6] https://www.softwaretestinghelp.com/postman-newman/
+[7] https://www.youtube.com/watch?v=wyIC-FquhUk
+[8] https://www.npmjs.com/package/newman-reporter-htmlextra
