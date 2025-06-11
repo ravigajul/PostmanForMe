@@ -327,15 +327,83 @@ Postman sends 'Content-Length' and Newman sends 'content-length'. 
 1. Set the 'Connection' header for the (GET) request that is failing in Newman to the value 'keep-alive' in the Postman collection.
 2. Re-export your collection for running in Newman
 Working! The header is 'Connection', not 'Connect'.
+Here’s a clean and professional README.md that documents how to use Redocly CLI for OpenAPI validation, bundling, and linting. You can place this in your API repo to guide your team or future self.
 
-From <https://github.com/postmanlabs/newman/issues/249> 
+⸻
 
-Citations:  
-[1] https://learning.postman.com/docs/collections/using-newman-cli/installing-running-newman/  
-[2] https://toolsqa.com/postman/install-newman-using-npm/  
-[3] https://www.npmjs.com/package/newman  
-[4] https://apidog.com/blog/how-to-install-newman-and-run-postman-collection/  
-[5] https://www.youtube.com/watch?v=51PL_D6RINw  
-[6] https://www.softwaretestinghelp.com/postman-newman/  
-[7] https://www.youtube.com/watch?v=wyIC-FquhUk  
-[8] https://www.npmjs.com/package/newman-reporter-htmlextra  
+
+# 🧾 API Documentation & Validation with Redocly CLI
+
+This project uses **[Redocly CLI](https://redocly.com/docs/cli/)** to validate, lint, and bundle the OpenAPI specification (Swagger) for this service.
+
+---
+
+## 📦 Setup Instructions
+
+### 🔧 Install Redocly CLI Globally
+
+You must have [Node.js](https://nodejs.org/) installed.
+
+```bash
+npm install -g @redocly/cli
+
+✅ Recommended version: Node 14+ and Redocly CLI v1.0+
+
+⸻
+
+📁 File Structure
+
+.
+├── openapi/
+│   └── swagger.yaml          # Your main OpenAPI file
+├── .redocly.yaml             # Optional Redocly config (rules, lint setup)
+└── README.md                 # This file
+
+
+⸻
+
+✅ Basic Usage
+
+🔍 Lint the OpenAPI Spec
+
+Check for errors and best-practice violations:
+
+redocly lint openapi/swagger.yaml
+
+📦 Bundle the Spec
+
+Flatten a multi-file OpenAPI definition into a single file:
+
+redocly bundle openapi/swagger.yaml -o openapi/bundled.yaml
+
+Use --dereferenced if you want to fully expand all $refs:
+
+redocly bundle openapi/swagger.yaml --dereferenced -o openapi/dereferenced.yaml
+
+
+⸻
+
+⚙️ Optional: Configure Custom Rules
+
+You can add a .redocly.yaml to control which rules apply.
+
+Sample .redocly.yaml:
+
+lint:
+  extends:
+    - recommended
+  rules:
+    operation-summary: error
+    operation-description: warn
+    tag-description: warn
+
+You can read more on available rules at Redocly CLI Rules Documentation.
+
+⸻
+
+🧪 Integrate into CI/CD
+
+GitHub Actions Example
+
+- name: Lint OpenAPI spec
+  run: redocly lint openapi/swagger.yaml
