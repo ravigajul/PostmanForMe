@@ -346,6 +346,9 @@ You must have [Node.js](https://nodejs.org/) installed.
 
 ```bash
 npm install -g @redocly/cli
+redocly lint swagger.json
+# To redirect output to text file in clean format
+redocly lint swagger.json --format stylish > lint-report.txt 2>&1
 
 ✅ Recommended version: Node 14+ and Redocly CLI v1.0+
 
